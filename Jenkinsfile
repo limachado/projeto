@@ -13,6 +13,10 @@ pipeline {
                 sh 'echo build realizado'
             }
         }
+       'stage('subir container') {
+         steps {
+             sh 'docker run -d -p 90:9090 projetolua'
+         }
         stage ('subindo para o dockerhub') {
             steps {
                 sh 'echo subindo para o dockerhub'
