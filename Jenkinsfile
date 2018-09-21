@@ -13,7 +13,7 @@ pipeline {
                 sh 'echo build realizado'
             }
         }
-       'stage('subir container') {
+       stage('subir container') {
          steps {
              sh 'docker run -d -p 90:8080 projetolua'
          }
