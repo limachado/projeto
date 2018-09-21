@@ -17,6 +17,7 @@ pipeline {
          steps {
              sh 'docker run -d -p 90:8080 projetolua'
          }
+        }
         stage ('subindo para o dockerhub') {
             steps {
                 sh 'echo subindo para o dockerhub'
