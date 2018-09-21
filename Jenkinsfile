@@ -20,10 +20,10 @@ pipeline {
         }
         stage ('subindo para o dockerhub') {
             steps {
-                sh 'echo subindo para o dockerhub'
-                sh 'docker tag projetolua luaivo14/projetolua'
-                sh 'docker login -u $DOCKER_USER -p $DOCKER_PASSWORD'
+                sh 'docker tag projetolua'
+                sh 'docker login -u luaivo14 -p #rfembr64'
                 sh 'docker push luaivo14/projetolua'
+               sh 'echo subiu para o dockerhub'
             }
         }
      }
