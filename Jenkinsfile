@@ -20,7 +20,7 @@ pipeline {
         }
         stage ('subindo para o dockerhub') {
             steps {
-                sh 'docker tag projetolua lauivo14/projetolua'
+                sh 'docker tag projetolua luaivo14/projetolua'
                 sh 'docker login -u luaivo14 -p 14ivolua'
                 sh 'docker push luaivo14/projetolua'
                 sh 'echo subiu para o dockerhub'
