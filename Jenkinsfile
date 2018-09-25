@@ -15,6 +15,7 @@ pipeline {
         }
        stage('subir container') {
          steps {
+            sh 'docker rm -f maquinateste'
              sh 'docker run -d --name maquinateste -p 90:8080 projetolua'
          }
         }
