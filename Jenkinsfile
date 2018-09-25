@@ -20,8 +20,9 @@ pipeline {
         }
         stage ('subindo para o dockerhub') {
             steps {
+                withCredentials([string(credentialsId: 'user', variable: 'USER'), string(credentialsId: 'user', variable: 'PASS')]) {
                 sh 'docker tag projetolua luaivo14/projetolua'
-                sh 'docker login -u luaivo14 -p 14ivolua'
+                sh 'docker login -u $USER -p $PASS'
                 sh 'docker push luaivo14/projetolua'
                 sh 'echo subiu para o dockerhub'
             }
