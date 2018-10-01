@@ -21,11 +21,13 @@ pipeline {
         }
        stage('subir container') {
          steps {
-            try{
-               sh 'docker rm -f maquinateste'
-               sh 'docker run -d --name maquinateste -p 90:8080 projetolua'
-            }catch(exc){
-               sh 'docker run -d --name maquinateste -p 90:8080 projetolua'
+            script{
+               try{
+                  sh 'docker rm -f maquinateste'
+                  sh 'docker run -d --name maquinateste -p 90:8080 projetolua'
+               }catch(exc){
+                  sh 'docker run -d --name maquinateste -p 90:8080 projetolua'
+               }  
             }
          }
         }
