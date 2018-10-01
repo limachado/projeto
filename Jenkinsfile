@@ -23,9 +23,10 @@ pipeline {
          steps {
             try{
                sh 'docker rm -f maquinateste'
-               sh 'docker run -d --name maquinateste -p 90:8080 projetolua'}
-            catch{
-               sh 'docker run -d --name maquinateste -p 90:8080 projetolua'}
+               sh 'docker run -d --name maquinateste -p 90:8080 projetolua'
+            }catch(exc){
+               sh 'docker run -d --name maquinateste -p 90:8080 projetolua'
+            }
          }
         }
         stage ('subindo para o dockerhub') {
